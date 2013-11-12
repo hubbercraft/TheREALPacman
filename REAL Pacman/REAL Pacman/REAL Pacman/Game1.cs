@@ -18,6 +18,8 @@ namespace REAL_Pacman
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Pacman pacman;
+        Texture2D Pacman;
 
         public Game1()
         {
@@ -46,8 +48,10 @@ namespace REAL_Pacman
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            pacman = new Pacman();
 
             // TODO: use this.Content to load your game content here
+
         }
 
         /// <summary>
