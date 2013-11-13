@@ -23,9 +23,13 @@ namespace REAL_Pacman
         public override void Update(GameTime gameTime)
         {
             KeyboardState kb = Keyboard.GetState();
-            if (kb.IsKeyDown(Keys.D1))
+            if (kb.IsKeyDown(Keys.Right))
             {
-                
+                Velocity = new Vector2(32, 0);
+            }
+            if (kb.IsKeyDown(Keys.Down))
+            {
+                Velocity = new Vector2(0, 32);
             }
  
             base.Update(gameTime);
