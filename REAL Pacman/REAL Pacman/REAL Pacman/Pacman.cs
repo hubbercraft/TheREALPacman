@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace REAL_Pacman
 {
@@ -19,16 +20,14 @@ namespace REAL_Pacman
 
         }
 
-        public Pacman()
-        {
-            // TODO: Complete member initialization
-        }
-
         public override void Update(GameTime gameTime)
         {
-            //insert keyboard clicks code
-            
-            
+            KeyboardState kb = Keyboard.GetState();
+            if (kb.IsKeyDown(Keys.D1))
+            {
+                
+            }
+ 
             base.Update(gameTime);
         }
 

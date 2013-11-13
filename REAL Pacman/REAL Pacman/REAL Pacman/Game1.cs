@@ -48,10 +48,8 @@ namespace REAL_Pacman
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            pacman = new Pacman();
-
+            Pacman = Content.Load<Texture2D>(@"Pacman");
             // TODO: use this.Content to load your game content here
-
         }
 
         /// <summary>
@@ -85,11 +83,13 @@ namespace REAL_Pacman
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Gray);
 
             // TODO: Add your drawing code here
-
+            spriteBatch.Begin();
+            spriteBatch.Draw(Pacman, new Vector2(0, 0), Color.Yellow);
             base.Draw(gameTime);
+            spriteBatch.End();
         }
     }
 }
