@@ -26,12 +26,26 @@ namespace REAL_Pacman
             if (kb.IsKeyDown(Keys.Right))
             {
                 Velocity = new Vector2(32, 0);
+                Rotation = 0;
+                
             }
             if (kb.IsKeyDown(Keys.Down))
             {
                 Velocity = new Vector2(0, 32);
+                Rotation = MathHelper.PiOver2;
             }
- 
+
+            if (kb.IsKeyDown(Keys.Left))
+            {
+                Velocity = new Vector2(-32, 0);
+                Rotation = MathHelper.Pi;
+            }
+            if (kb.IsKeyDown(Keys.Up))
+            {
+                Velocity = new Vector2(0, -32);
+                Rotation = -MathHelper.PiOver2;
+            }
+
             base.Update(gameTime);
         }
 

@@ -22,9 +22,6 @@ namespace REAL_Pacman
 
         public Texture2D Texture;
 
-
-
-
         protected List<Rectangle> frames = new List<Rectangle>();
 
         private int frameWidth = 0;
