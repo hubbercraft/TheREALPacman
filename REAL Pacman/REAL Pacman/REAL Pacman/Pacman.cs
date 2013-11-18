@@ -37,27 +37,28 @@ namespace REAL_Pacman
 
         public void UpdateDirection()
         {
+            location = target;
             switch (direction)
             {
                 case Direction.Right:
                     Velocity = new Vector2(speed, 0);
                     Rotation = 0;
-                    target = location + new Vector2(speed, 0);
+                    target = location + new Vector2(32, 0);
                     break;
                 case Direction.Left:
                     Velocity = new Vector2(-speed, 0);
                     Rotation = MathHelper.Pi;
-                    target = location + new Vector2(-speed, 0);
+                    target = location + new Vector2(-32, 0);
                     break;
                 case Direction.Down:
                     Velocity = new Vector2(0, speed);
                     Rotation = MathHelper.PiOver2;
-                    target = location + new Vector2(0, speed);
+                    target = location + new Vector2(0, 32);
                     break;
                 case Direction.Up:
                     Velocity = new Vector2(0, -speed);
                     Rotation = -MathHelper.PiOver2;
-                    target = location + new Vector2(0, - speed);
+                    target = location + new Vector2(0, -32);
                     break;
             }
         }
@@ -91,6 +92,8 @@ namespace REAL_Pacman
     {
         UpdateDirection();
     }
+
+
 
             base.Update(gameTime);
         }
