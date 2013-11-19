@@ -37,7 +37,6 @@ namespace REAL_Pacman
 
         public void UpdateDirection()
         {
-            location = target;
             switch (direction)
             {
                 case Direction.Right:
@@ -84,12 +83,30 @@ namespace REAL_Pacman
                 direction = Direction.Up;
             }
 
-            if (velocity.X >  0 && location.X >= target.X ||
+
+            if (velocity.X > 0 && direction == Direction.Left ||
+                velocity.X < 0 && direction == Direction.Right ||
+                velocity.Y < 0 && direction == Direction.Down ||
+                velocity.Y > 0 && direction == Direction.Up)
+            {
+                switch(direction)
+                {
+                    case Direction.Left: target = target - new Vector2(32,0); break;
+                    case Direction.Right: target = target + new Vector2(32,0); break;
+                    case Direction.Down: target = target + new Vector2(0, 32); break;
+                    case Direction.Up: target = target - new Vector2(0,32); break;
+                }
+                UpdateDirection();
+            }
+
+            if (velocity.X > 0 && location.X >= target.X ||
                 velocity.X < 0 && location.X <= target.X ||
                 velocity.Y > 0 && location.Y >= target.Y ||
                 velocity.Y < 0 && location.Y <= target.Y
             )
+                
     {
+        location = target;
         UpdateDirection();
     }
 
