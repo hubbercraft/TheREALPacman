@@ -57,7 +57,7 @@ namespace REAL_Pacman
             spritesheet = Content.Load<Texture2D>(@"Pacman");
             pacman = new Pacman(new Vector2(0, 0), spritesheet, new Rectangle(0, 0, 32, 32), Vector2.Zero);
             // TODO: use this.Content to load your game content here
-            map = Content.Load<Map>("pacmanmap");
+            map = Content.Load<Map>("background");
             map.LoadTileSheets(XnaDisplayDevice);
         }
 
